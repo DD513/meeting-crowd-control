@@ -1,38 +1,156 @@
-.container {
-  display: flex;
-  width: 100%;
-  box-sizing: border-box;
-  height: 100vh;
-}
+@import url('../../assets/styles/theme.less');
 
-.box {
-  flex: 1;
-  overflow: hidden;
-  transition: 1s;
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
-  line-height: 0;
-}
+#index {
+    .bannerBlock {
+        margin: 80px 120px;
+        align-items: center;
+    }
 
-.box > img {
-  width: 100%;
-  height: calc(100% - 10vh);
-  object-fit: cover;
-  object-position: center;
-  transition: 1s;
-}
+    .signBlock{
+        font-weight: bold;
+        .ant-typography{
+            color: @brown-color;
+            span{
+                color: @main-color;
+                font-weight: bold;
+            }
+        }       
+    }
+    .newsBlock {
+        background: linear-gradient(90deg,  #DF8261 0%,#F7AF3B 100%);
+        padding: 80px;
+        .ant-typography {
+            color: #ffffff;
+            a {
+                color: #ffffff;
+            }
+           
+        }
+        hr {
+            border-bottom: 0.0625em solid #fff;
+            border-top: none !important;
+            margin: 1.25em 0 ;
+            opacity: 0.2;
+        }
+        
+    }
 
-.box > span {
-  font-size: 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 10vh;
-}
+    .titleBlock {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 20px 0px;
+        padding: 20px 80px;
 
-.box:hover {
-  flex: 1 1 30%;
+        .ant-typography {
+            span {
+                font-size: 2.375rem;
+                margin: 0 0.5rem;
+                color: @dark-main-color;
+                font-weight: bold;
+            }
+        }
+
+
+        .alertBlock {
+            padding: 20px 0;
+            .ant-alert-info {
+                background-color: rgba(@secondary-color, 0.1);
+                border: 1px solid rgba(@secondary-color, 0.1);
+
+                .ant-alert-icon {
+                    color: @secondary-color;
+                }
+            }
+        }
+
+        .buttonBlock {
+            display: flex;
+            align-items: center;
+            position: relative;
+
+            .inputBlock {
+                position: relative;
+                width: 100%;
+
+                svg {
+                    color: @secondary-color;
+                    position: absolute;
+                    z-index: 1;
+                    top: 50%;
+                    left: 24px;
+                    transform: translate(-50%, -50%);
+                }
+
+                .ant-input {
+                    padding-left: 40px;
+                    height: 48px;
+                }
+
+                .ant-btn {
+                    height: 48px;
+                }
+            }
+        }
+    }
+    
+    .imgBlock {
+        height: 450px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .processBlock {
+        margin: 48px 120px;
+        .iconBlock {
+            width: 100%;
+            margin: 2rem 0;
+            padding: 0px 20px;
+
+            .ant-steps-item-content {
+                text-align: center;
+            }
+
+            .ant-steps-item-process>.ant-steps-item-container>.ant-steps-item-icon {
+                background-color: @secondary-color;
+                border-color: @secondary-color;
+            }
+
+            svg {
+                background-color: @brown-color;
+                color: #ffffff;
+                padding: 16px;
+                border-radius: 16px;
+                font-size: 4rem;
+                margin: 1rem 0;
+            }
+
+            p {
+                font-size: 1.25rem;
+            }
+        }
+    }
 }
-.box:hover > img {
-  width: 100%;
-  height: 100%;
+@media screen and (max-width:992px) {
+    .ant-steps{
+        flex-direction: column;
+    }
+    .ant-steps-horizontal:not(.ant-steps-label-vertical) .ant-steps-item{
+        padding-left: 0;
+    }
+}
+@media screen and (max-width:576px) {
+    #index {
+        .titleBlock {
+            .ant-typography {
+                span {
+                    font-size: 2.25rem;
+                }
+            }
+        }
+    }
 }

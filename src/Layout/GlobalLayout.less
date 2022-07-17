@@ -1,0 +1,246 @@
+@import url('.././assets/styles/theme.less');
+
+// 全域樣式
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Microsoft JhengHei', 'Arial';
+    font-weight: 500;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: 0;
+}
+
+h1 {
+    font-size: 1.875rem;
+}
+
+.show {
+    display: block;
+}
+
+.hide {
+    display: none;
+}
+
+// 佈局樣式
+html,
+body {
+    height: 100%;
+    font-size: 1rem;
+}
+
+.ant-layout-header {
+    background-color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-layout-content {
+    height: calc(100% - 134px);
+    background-color: #ffffff;
+}
+
+.ant-layout-footer {
+    height: 70px;
+    background-color: #ffffff;
+}
+
+// header
+.logoBlock {
+    width: 150px;
+
+    .logoImage {
+        margin-right: 0.875rem;
+    }
+}
+
+#global {
+    .menuBar {
+        width: calc(100% - 150px);
+
+        .ant-menu-item {
+            color: @text-color;
+            font-size: @base-size;
+
+            &::after {
+                border-bottom: unset;
+            }
+
+            &:hover,
+            &:focus {
+                color: @main-color  !important;
+                font-weight: bold;
+
+                &::after {
+                    border-bottom: 2px solid @main-color  !important;
+                }
+
+                .ant-space-item {
+                    color: #ffffff;
+                }
+            }
+
+            &:active {
+                background-color: unset;
+            }
+
+            a {
+                &:hover {
+                    color: @main-color;
+                    font-weight: bold;
+                }
+            }
+        }
+
+        .ant-menu-item:nth-child(2) {
+            &:hover {
+                &::after {
+                    border-bottom: 2px solid @main-color;
+                }
+            }
+        }
+
+        .ant-menu-item:nth-child(6) {
+            margin-left: auto;
+            padding: 0;
+        }
+
+        .ant-menu-item-selected {
+            outline: none;
+            color: @text-color  !important;
+            font-weight: bold;
+
+            a {
+                color: @main-color;
+            }
+
+            &::after {
+                border-bottom: unset !important;
+            }
+        }
+    }
+
+    .ant-avatar {
+        background-color: @main-color;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .ant-menu-vertical {
+        border-right: 1px solid #ffffff;
+    }
+}
+
+//dropdown
+.ant-dropdown {
+    &:hover {
+        border-bottom: unset;
+    }
+
+    .ant-dropdown-menu-item {
+        padding: 5px 20px;
+        font-size: 0.875rem;
+
+        svg {
+            font-size: 0.875rem;
+        }
+    }
+}
+
+//響應式Menu
+.menuBarList {
+    .ant-menu-item {
+
+        &:hover,
+        &:focus {
+            color: @main-color;
+            font-weight: bold;
+            border-bottom: 2px solid @main-color;
+            background-color: unset;
+
+            a {
+                color: @main-color;
+                font-weight: bold;
+            }
+        }
+    }
+
+    .ant-menu-item:nth-child(6) {
+        display: none;
+    }
+
+    li.ant-menu-item.ant-menu-item-selected.ant-menu-item-only-child {
+        background-color: rgba(@main-color, 0.1);
+        color: @main-color;
+    }
+
+    .ant-menu-item-selected {
+        outline: none;
+        color: @text-color  !important;
+        font-weight: bold;
+
+        a {
+            color: @main-color;
+        }
+    }
+}
+
+
+
+@media screen and (max-width:992px) {
+    #global {
+
+        .ant-dropdown-trigger {
+            margin-left: auto;
+            margin-right: 1rem;
+        }
+
+        .menuBar {
+            display: none;
+        }
+
+        .ant-dropdown {
+            right: 0;
+        }
+
+        .ant-avatar {
+            margin-left: auto;
+        }
+
+        .barIcon {
+            background-color: unset;
+            color: @main-color;
+            border-color: unset;
+            height: 36px;
+
+            &:hover,
+            &:focus {
+                background-color: @main-color;
+                color: #ffffff;
+            }
+        }
+
+        .ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+            background-color: rgba(@main-color, 0.2);
+        }
+    }
+}
+
+
+
+@media screen and (max-width:576px) {
+    h1 {
+        font-size: 1.25rem;
+    }
+}

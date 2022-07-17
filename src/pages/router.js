@@ -1,27 +1,20 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 import Login from "./Login/index";
 import Counter from "./counter/counter";
-import GlobalLayout from "../Layout/index";
-import LoginLayout from "../Layout/LoginLayout";
 import Home from "./Home/index";
-import SignUp from "./signUp/index";
-import UserProfile from "./userProfile/index";
 import NotFound from "./NotFound/index";
+import GlobalLayout from "../Layout/GlobalLayout";
 
 function Router() {
   return (
     <BrowserRouter>
       <Routes>
         <Route element={<GlobalLayout />}>
+          <Route path="login" element={<Login />} />
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<Counter />} />
-          <Route path="/userProfile" element={<UserProfile />} />
-        </Route>
-
-        <Route element={<LoginLayout />}>
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<SignUp />} />
+          <Route path="counter" element={<Counter />} />
         </Route>
         <Route path="*" element={<NotFound />} />
       </Routes>

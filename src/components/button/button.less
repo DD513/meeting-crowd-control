@@ -1,0 +1,21 @@
+@import url('../../assets/styles/theme.less');
+
+.ant-btn {
+    height: auto;
+    padding: 10px;
+}
+
+.ant-btn-primary {
+
+    margin: 1rem 0;
+    background-color: @dark-main-color;
+    border-color: @dark-main-color;
+    color: #ffffff;
+    box-shadow: 0 2px 0 rgba(@dark-main-color, 0.1);
+
+    &:hover,
+    &:focus {
+        background-color: @deep-main-color;
+        border-color: @deep-main-color;
+    }
+}

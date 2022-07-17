@@ -4,7 +4,7 @@ import { Layout } from "antd";
 
 const Footer = () => {
   return (
-    <Layout.Footer style={{ textAlign: "center" }}>DoD QsQ ©2020</Layout.Footer>
+    <Layout.Footer style={{ textAlign: "center" }}>DD ©2022</Layout.Footer>
   );
 };
 

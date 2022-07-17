@@ -3,19 +3,14 @@
 // const IMAGE_FOLDER = "../assets/images/";
 
 const images = {
-  //backgroundMaterial
-  // material: require('../assets/email-pattern.png'),
-
-  // index
-  // homeLogo: require(`${IMAGE_FOLDER}/logo.png`),
-  homeLogo: require(`../assets/images/logo.png`),
-
+  // NotFound
   NotFound: require(`../assets/images/NotFound2.png`),
   NotFoundBG: require(`../assets/images/NotFoundBG.png`),
-  homeOne: require("../assets/images/Introduce.jpg"),
-  homeTwo: require("../assets/images/Interest.jpg"),
-  homeThree: require("../assets/images/Relax.jpg"),
-  homeFour: require("../assets/images/Character.jpg"),
+
+  // homePage
+  logo: require("../assets/images/digi_logo.png"),
+  bg1: require("../assets/images/person-home.jpeg"),
+  homeOrange: require("../assets/images/home-orange.jpeg"),
 };
 
 export default images;
