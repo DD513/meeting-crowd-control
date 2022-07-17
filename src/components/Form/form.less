@@ -1,0 +1,32 @@
+#userForm {
+    .ant-picker {
+        width: 100%;
+    }
+
+    .addressItem {
+        .ant-input {
+            margin: 1rem 0;
+        }
+    }
+
+    .submitButton {
+        display: flex;
+        justify-content: center;
+
+        .ant-btn {
+            width: 100%;
+        }
+    }
+}
+
+@media screen and (max-width:992px) {
+    #userForm {
+        .ant-col-offset-2 {
+            margin-left: 0;
+        }
+
+        .submitButton {
+            justify-content: flex-end;
+        }
+    }
+}

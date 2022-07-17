@@ -1,0 +1,40 @@
+@white-color:#ffffff;
+@loginBtnColor:#F5CFB8;
+@black-color:#000000;
+
+#login{
+    .actionBlock{
+        h4{
+            color: @white-color;
+        }
+        .ant-form-item{
+            margin-bottom: 0;
+        }
+        .forgetLink{
+            text-align: right;
+        }
+        .ant-checkbox-inner{
+            border-color: @loginBtnColor;
+            color: @black-color;
+        }
+        .ant-checkbox-checked .ant-checkbox-inner{
+            background-color: @loginBtnColor;
+            border-color: @loginBtnColor;
+            color: @black-color;
+        }
+        .ant-checkbox-wrapper{
+            color: @white-color;
+        }
+        .ant-checkbox-checked::after{
+            border: 1px solid @loginBtnColor;
+        }
+    }
+    .signupLink{
+        text-align: center;
+        margin: 30px auto;
+        h4{
+            color: @white-color;
+        }
+        
+    }
+}

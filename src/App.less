@@ -1,0 +1,73 @@
+@import "~antd/dist/antd.less";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+@import './style.less';
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-size: 1rem;
+    font-family: 'Courgette', 'Noto Serif TC';
+    font-weight: 500;
+}
+
+a {
+    color: @black-color;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+/* layout */
+.ant-layout-content {
+    // margin: 24px 16px 0;
+    min-height: 100vh;
+    overflow: initial;
+}
+
+.ant-layout-sider {
+    background-color: @white-color;
+    position: fixed;
+    height: 100%;
+}
+
+.ant-layout-sider-trigger {
+    color: black;
+    height: 10vh;
+}
+
+/* menu */
+.ant-menu {
+    text-align: center;
+    height: 100%;
+}
+
+.ant-menu-item a {
+    &:hover {
+        color: @black-color;
+    }
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+    background-color: @white-color;
+    color: black;
+}
+
+.ant-menu-item-selected a {
+    color: @black-color;
+}
+
+.ant-menu-light .ant-menu-item:hover {
+    color: @black-color;
+    text-decoration: underline;
+}
+
+.ant-menu-inline .ant-menu-item::after {
+    border-right: unset;
+}
+
+.ant-menu-item:active {
+    background-color: unset;
+}

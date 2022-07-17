@@ -1,0 +1,38 @@
+.container {
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
+  height: 100vh;
+}
+
+.box {
+  flex: 1;
+  overflow: hidden;
+  transition: 1s;
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+  line-height: 0;
+}
+
+.box > img {
+  width: 100%;
+  height: calc(100% - 10vh);
+  object-fit: cover;
+  object-position: center;
+  transition: 1s;
+}
+
+.box > span {
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10vh;
+}
+
+.box:hover {
+  flex: 1 1 30%;
+}
+.box:hover > img {
+  width: 100%;
+  height: 100%;
+}
