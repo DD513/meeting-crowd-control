@@ -3,6 +3,8 @@ import React, { useState } from "react";
 import { Dropdown, Layout, Menu, Avatar, Button, Drawer } from "antd";
 import "./GlobalLayout.less";
 import images from "../config/images";
+import _ from "lodash";
+import { useDispatch } from "react-redux";
 import {
   FaUserAlt,
   FaEdit,
@@ -15,6 +17,16 @@ import {
 const { Header } = Layout;
 
 function HeaderComponent(props) {
+  const dispatch = useDispatch();
+
+  const handleLogout = (e) => {
+    if (e.key === "logout") {
+      dispatch({ type: "POST_UserLogout" });
+    }
+  };
+  // if (localStorage.getItem("token") !== null) {
+  //   dispatch({ type: "GET_User" });
+  // }
   const { windowSize } = props;
   const [visible, setVisible] = useState(false);
   const showDrawer = () => {
@@ -45,6 +57,7 @@ function HeaderComponent(props) {
   const userMenu = (
     <Menu
       className="userDropdown"
+      onClick={handleLogout}
       items={[
         {
           icon: <FaEdit />,
@@ -68,7 +81,7 @@ function HeaderComponent(props) {
               {localStorage.getItem("token") === null ? "登入" : "登出"}
             </a>
           ),
-          key: "signin",
+          key: _.isEmpty(localStorage.getItem("token")) ? "login" : "logout",
         },
       ]}
     />
