@@ -5,14 +5,13 @@ import { effectError } from "../../utils/handleError";
 
 export function* GET_HomeData({ loading, callback }) {
   try {
-    if (loading) loading(true);
     const response = yield call(GET_PythonData);
     console.log("===python===", response);
     yield put({
       type: "SAVE_PythonData",
       payload: response,
     });
-    message.success(response.message);
+    // message.success(response.message);
     // if (loading) loading(false);
     // if (callback) callback();
   } catch (error) {

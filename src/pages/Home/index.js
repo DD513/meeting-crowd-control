@@ -18,14 +18,27 @@ import AlertComponent from "../../components/message/alert";
 import ButtonComponent from "../../components/button/button";
 import InputComponent from "../../components/input/input";
 import _ from "lodash";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import config from "../../config/api-Config";
 
 const { Step } = Steps;
 const { Title } = Typography;
 
 function Index() {
   const dispatch = useDispatch();
-  dispatch({ type: "GET_PythonData" });
+  setTimeout(() => {
+    dispatch({ type: "GET_PythonData" });
+  }, 500);
+
+  const pythonData = useSelector((state) => state.homeReducer);
+  // console.log(
+  //   "pewerwer",
+  //   pythonData,
+  //   pythonData.data[0] !== undefined
+  //     ? `${config.api}/${pythonData.data[0].imageUrl}`
+  //     : "none"
+  // );
+
   const styles = {
     textAlign: "center",
   };
@@ -110,24 +123,58 @@ function Index() {
           <Row className="bannerBlock" justify="center" align="center">
             <Col xs={24} md={13}>
               <div className="imgBlock">
-                <img src={images.bg1} alt="bg-1" className="" />
+                <img
+                  src={
+                    pythonData.data[0] !== undefined
+                      ? `${config.api}/${pythonData.data[0].imageUrl}`
+                      : ""
+                  }
+                  alt="bg-1"
+                  className=""
+                />
               </div>
             </Col>
+            {/* <Col xs={24} md={13}>
+              <div className="imgBlock">
+                <video width="750" height="500" controls>
+                  <source
+                    src={
+                      pythonData.data[1] !== undefined
+                        ? `${config.api}/${pythonData.data[1].videoUrl}`
+                        : ""
+                    }
+                    type="video/mp4"
+                  />
+                </video>
+              </div>
+            </Col> */}
             <Col xs={24} md={{ offset: 1, span: 10 }}>
-              <div className="signBlock">
-                {_.map(signData, (item, index) => (
+              {pythonData.data[0] !== undefined ? (
+                <div className="signBlock">
                   <Row>
                     <Col xs={24}>
-                      <Title level={2}>{item.title}：</Title>
+                      <Title level={2}>{pythonData.data[2].title}：</Title>
                     </Col>
                     <Col xs={24}>
                       <Title>
-                        <span>{item.data}</span>
+                        <span>{pythonData.data[2].data} 人</span>
                       </Title>
                     </Col>
                   </Row>
-                ))}
-              </div>
+                  <Row>
+                    <Col xs={24}>
+                      <Title level={2}>{pythonData.data[3].title}：</Title>
+                    </Col>
+                    <Col xs={24}>
+                      <Title>
+                        <span>{pythonData.data[3].data}</span>
+                      </Title>
+                    </Col>
+                  </Row>
+                </div>
+              ) : (
+                ""
+              )}
             </Col>
           </Row>
           <Row className="newsBlock" justify="center">
