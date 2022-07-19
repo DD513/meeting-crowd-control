@@ -1,7 +1,7 @@
 const apiConfig = {
-  protocol: process.env.REACT_APP_API_PROTOCOL || "https",
-  host: process.env.REACT_APP_API_HOST || "clean-nodejs-dd.herokuapp.com",
-  port: process.env.REACT_APP_API_PORT || "",
+  protocol: process.env.REACT_APP_API_PROTOCOL || "http",
+  host: process.env.REACT_APP_API_HOST || "localhost",
+  port: process.env.REACT_APP_API_PORT || "8000",
   prefix: process.env.REACT_APP_API_PREFIX || "",
 };
 
