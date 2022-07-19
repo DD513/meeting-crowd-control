@@ -4,6 +4,7 @@ import { all } from "redux-saga/effects";
 const sagaArray = [];
 
 sagaArray.push(require("./user").default());
+sagaArray.push(require("./home").default());
 
 export function* rootSaga() {
   yield all(sagaArray);

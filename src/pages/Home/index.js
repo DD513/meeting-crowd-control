@@ -18,10 +18,14 @@ import AlertComponent from "../../components/message/alert";
 import ButtonComponent from "../../components/button/button";
 import InputComponent from "../../components/input/input";
 import _ from "lodash";
+import { useDispatch } from "react-redux";
+
 const { Step } = Steps;
 const { Title } = Typography;
 
 function Index() {
+  const dispatch = useDispatch();
+  dispatch({ type: "GET_PythonData" });
   const styles = {
     textAlign: "center",
   };

@@ -51,7 +51,7 @@ export function* GET_User({ loading, callback }) {
     if (loading) loading(true);
     const token = yield getToken();
     const response = yield call(GET_user, token);
-    console.log(response);
+    console.log("===GetUser===", response.user);
     yield put({
       type: "SAVE_User",
       payload: response.user,
