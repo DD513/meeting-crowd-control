@@ -133,8 +133,7 @@ function Index() {
           <Row className="bannerBlock" justify="center" align="center">
             <Col xs={24} md={13}>
               <div className="imgBlock">
-                <Image
-                  height={450}
+                <img
                   src={
                     pythonData.data[0] !== undefined
                       ? `${config.api}/${pythonData.data[0].imageUrl}`
