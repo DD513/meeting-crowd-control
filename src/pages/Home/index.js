@@ -134,7 +134,7 @@ function Index() {
             <Col xs={24} md={13}>
               <div className="imgBlock">
                 <Image
-                  className="pythonImage"
+                  height={450}
                   src={
                     pythonData.data[0] !== undefined
                       ? `${config.api}/${pythonData.data[0].imageUrl}`
