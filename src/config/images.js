@@ -11,6 +11,7 @@ const images = {
   logo: require("../assets/images/digi_logo.png"),
   bg1: require("../assets/images/person-home.jpeg"),
   homeOrange: require("../assets/images/home-orange.jpeg"),
+  homeImageNotFound: require("../assets/images/homeImageNotFound.png"),
 };
 
 export default images;

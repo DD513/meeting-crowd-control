@@ -1,6 +1,15 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useEffect, useState } from "react";
-import { Row, Col, Typography, Steps, message, Result, Button } from "antd";
+import {
+  Row,
+  Col,
+  Typography,
+  Steps,
+  message,
+  Result,
+  Button,
+  Image,
+} from "antd";
 import "./index.less";
 import images from "../../config/images";
 import {
@@ -14,6 +23,7 @@ import {
   FaTemperatureHigh,
   FaRegClock,
 } from "react-icons/fa";
+import { SmileOutlined } from "@ant-design/icons";
 import AlertComponent from "../../components/message/alert";
 import ButtonComponent from "../../components/button/button";
 import InputComponent from "../../components/input/input";
@@ -28,7 +38,7 @@ function Index() {
   const dispatch = useDispatch();
   setTimeout(() => {
     dispatch({ type: "GET_PythonData" });
-  }, 500);
+  }, 50);
 
   const pythonData = useSelector((state) => state.homeReducer);
   // console.log(
@@ -123,14 +133,12 @@ function Index() {
           <Row className="bannerBlock" justify="center" align="center">
             <Col xs={24} md={13}>
               <div className="imgBlock">
-                <img
+                <Image
                   src={
                     pythonData.data[0] !== undefined
                       ? `${config.api}/${pythonData.data[0].imageUrl}`
-                      : ""
+                      : images.homeImageNotFound
                   }
-                  alt="bg-1"
-                  className=""
                 />
               </div>
             </Col>
@@ -156,7 +164,7 @@ function Index() {
                       <Title level={2}>{pythonData.data[2].title}：</Title>
                     </Col>
                     <Col xs={24}>
-                      <Title>
+                      <Title level={3}>
                         <span>{pythonData.data[2].data} 人</span>
                       </Title>
                     </Col>
@@ -167,13 +175,34 @@ function Index() {
                     </Col>
                     <Col xs={24}>
                       <Title>
-                        <span>{pythonData.data[3].data}</span>
+                        <span level={3}>{pythonData.data[3].data}</span>
                       </Title>
                     </Col>
                   </Row>
                 </div>
               ) : (
-                ""
+                <div className="signBlock">
+                  <Row>
+                    <Col xs={24}>
+                      <Title level={2}>人數：</Title>
+                    </Col>
+                    <Col xs={24}>
+                      <Title level={3}>
+                        <span>-- 人</span>
+                      </Title>
+                    </Col>
+                  </Row>
+                  <Row>
+                    <Col xs={24}>
+                      <Title level={2}>時間：</Title>
+                    </Col>
+                    <Col xs={24}>
+                      <Title level={3}>
+                        <span>--</span>
+                      </Title>
+                    </Col>
+                  </Row>
+                </div>
               )}
             </Col>
           </Row>
